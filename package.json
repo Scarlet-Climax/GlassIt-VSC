@@ -84,7 +84,11 @@
       },
       {
         "command": "glassit.toggle",
-        "title": "GlassIt: Toggle the transparency"
+        "title": "GlassIt: Toggle the transparency by previous state"
+      },
+      {
+        "command": "glassit.toggle2",
+        "title": "GlassIt: Toggle the transparency by contrast"
       }
     ],
     "keybindings": [
@@ -101,7 +105,7 @@
         "key": "ctrl+alt+x"
       },
       {
-        "command": "glassit.toggle",
+        "command": "glassit.toggle2",
         "key": "alt+w"
       }
     ]

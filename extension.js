@@ -24,6 +24,7 @@ function activate(context) {
             ps.invoke().then(res => {
                 console.log(res);
                 console.log(`GlassIt: set alpha ${alpha}`);
+                config().update('toggleAlpha', config().get('alpha'), true);
                 config().update('alpha', alpha, true);
             }).catch(err => {
                 console.error(err);
@@ -88,6 +89,7 @@ function activate(context) {
 
                     console.log(stdout.toString());
                     console.log(`GlassIt: set alpha ${alpha}`);
+                    config().update('toggleAlpha', config().get('alpha'), true);
                     config().update('alpha', alpha, true);
                });
             }
@@ -121,9 +123,12 @@ function activate(context) {
 
     context.subscriptions.push(commands.registerCommand('glassit.toggle', () => {
         const toggle_alpha = config().get('toggleAlpha');
-        const alpha = config().get('alpha');
-        config().update('toggleAlpha', alpha, true);
         setAlpha(toggle_alpha);
+    }));
+
+    context.subscriptions.push(commands.registerCommand('glassit.toggle2', () => {
+        const alpha = 256 - config().get('alpha');
+        setAlpha(alpha);
     }));
 
     const alpha = config().get('alpha');
