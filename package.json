@@ -57,6 +57,11 @@
           "type": "integer",
           "default": 5,
           "description": "Increment of alpha"
+        },
+        "glassit.toggleAlpha": {
+          "type": "integer",
+          "default": 1,
+          "description": "Transparency level used for toggle [1-255]"
         }
       }
     },
@@ -76,6 +81,10 @@
       {
         "command": "glassit.minimize",
         "title": "GlassIt: Minimize the transparency"
+      },
+      {
+        "command": "glassit.toggle",
+        "title": "GlassIt: Toggle the transparency"
       }
     ],
     "keybindings": [
@@ -90,6 +99,10 @@
       {
         "command": "glassit.minimize",
         "key": "ctrl+alt+x"
+      },
+      {
+        "command": "glassit.toggle",
+        "key": "alt+w"
       }
     ]
   },

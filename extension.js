@@ -119,6 +119,13 @@ function activate(context) {
         setAlpha(255);
     }));
 
+    context.subscriptions.push(commands.registerCommand('glassit.toggle', () => {
+        const toggle_alpha = config().get('toggleAlpha');
+        const alpha = config().get('alpha');
+        config().update('toggleAlpha', alpha, true);
+        setAlpha(toggle_alpha);
+    }));
+
     const alpha = config().get('alpha');
     setAlpha(alpha);
 }
